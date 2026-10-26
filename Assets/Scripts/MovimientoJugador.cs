@@ -9,18 +9,18 @@ public class MovimientoJugador : MonoBehaviour
     [SerializeField]
     float velocidad = 5f;
     [SerializeField]
-    float velocidadSalto = 5f;
+    float velocidadSalto = 9f;
     int numSaltos = 0;
     [SerializeField]
     LayerMask Suelo;
     Animator playerAnimator;
     int estadoAnimacion = 0;
-    
+
     void Start()
     {
         movimientoAction = InputSystem.actions.FindAction("Move");
         saltarAction = InputSystem.actions.FindAction("Jump");
-        
+
         rb2d = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<BoxCollider2D>();
 
@@ -32,7 +32,14 @@ public class MovimientoJugador : MonoBehaviour
         Saltar();
         if (rb2d.linearVelocityY != 0)
         {
-            estadoAnimacion = 2;
+            if (numSaltos == 2)
+            {
+                estadoAnimacion = 3;
+            }
+            else
+            {
+                estadoAnimacion = 2;
+            }
         }
         else if (rb2d.linearVelocityX > 0)
         {
@@ -57,7 +64,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         Vector2 movimiento = movimientoAction.ReadValue<Vector2>();
         rb2d.linearVelocityX = movimiento.x * velocidad;
-        playerAnimator.SetFloat("Velocidad", Mathf.Abs(movimiento.x));  
+        playerAnimator.SetFloat("Velocidad", Mathf.Abs(movimiento.x));
     }
     void Saltar()
     {
