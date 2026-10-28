@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class MovimientoJugador : MonoBehaviour
@@ -15,6 +16,7 @@ public class MovimientoJugador : MonoBehaviour
     LayerMask Suelo;
     Animator playerAnimator;
     int estadoAnimacion = 0;
+    bool recibiendoDaño = false;
 
     void Start()
     {
@@ -30,41 +32,43 @@ public class MovimientoJugador : MonoBehaviour
     {
         Moverse();
         Saltar();
-        if (rb2d.linearVelocityY != 0)
+
+        if (!recibiendoDaño)
         {
-            if (numSaltos == 2)
+            if (Math.Abs(rb2d.linearVelocityY) > 0.1f)
             {
-                estadoAnimacion = 3;
+                if (numSaltos == 2)
+                {
+                    estadoAnimacion = 3;
+                }
+                else
+                {
+                    estadoAnimacion = 2;
+                }
+            }
+            else if (rb2d.linearVelocityX > 0)
+            {
+                estadoAnimacion = 1;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (rb2d.linearVelocityX < 0)
+            {
+                estadoAnimacion = 1;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
             else
             {
-                estadoAnimacion = 2;
+                estadoAnimacion = 0;
             }
-        }
-        else if (rb2d.linearVelocityX > 0)
-        {
-            estadoAnimacion = 1;
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (rb2d.linearVelocityX < 0)
-        {
-            estadoAnimacion = 1;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            estadoAnimacion = 0;
-        }
+            
 
-        playerAnimator.SetInteger("estado", estadoAnimacion);
-
-
+            playerAnimator.SetInteger("estado", estadoAnimacion);
+        }
     }
     void Moverse()
     {
         Vector2 movimiento = movimientoAction.ReadValue<Vector2>();
         rb2d.linearVelocityX = movimiento.x * velocidad;
-        playerAnimator.SetFloat("Velocidad", Mathf.Abs(movimiento.x));
     }
     void Saltar()
     {
@@ -93,9 +97,32 @@ public class MovimientoJugador : MonoBehaviour
             collider2D.bounds.size,
             0f,
             Vector2.down,
-            .1f,
+            .01f,
             Suelo
         );
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pinchos") && !recibiendoDaño)
+        {
+            recibiendoDaño = true;
+            estadoAnimacion = 4;
+            playerAnimator.SetInteger("estado", estadoAnimacion);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Pinchos"))
+    {
+        TerminarDaño();
+    }
+}
+
+    public void TerminarDaño()
+    {
+        recibiendoDaño = false;
     }
 
 
