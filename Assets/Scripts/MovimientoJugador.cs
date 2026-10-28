@@ -10,7 +10,7 @@ public class MovimientoJugador : MonoBehaviour
     [SerializeField]
     float velocidad = 5f;
     [SerializeField]
-    float velocidadSalto = 9f;
+    float velocidadSalto = 15f;
     int numSaltos = 0;
     [SerializeField]
     LayerMask Suelo;
@@ -35,7 +35,7 @@ public class MovimientoJugador : MonoBehaviour
 
         if (!recibiendoDaño)
         {
-            if (Math.Abs(rb2d.linearVelocityY) > 0.1f)
+            if (rb2d.linearVelocityY > 0.1f)
             {
                 if (numSaltos == 2)
                 {
@@ -45,6 +45,10 @@ public class MovimientoJugador : MonoBehaviour
                 {
                     estadoAnimacion = 2;
                 }
+            }
+            else if (rb2d.linearVelocityY < -0.1f)
+            {
+                estadoAnimacion = 5;
             }
             else if (rb2d.linearVelocityX > 0)
             {
@@ -60,7 +64,6 @@ public class MovimientoJugador : MonoBehaviour
             {
                 estadoAnimacion = 0;
             }
-            
 
             playerAnimator.SetInteger("estado", estadoAnimacion);
         }
@@ -113,12 +116,12 @@ public class MovimientoJugador : MonoBehaviour
     }
 
     void OnCollisionExit2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Pinchos"))
     {
-        TerminarDaño();
+        if (collision.gameObject.CompareTag("Pinchos"))
+        {
+            TerminarDaño();
+        }
     }
-}
 
     public void TerminarDaño()
     {

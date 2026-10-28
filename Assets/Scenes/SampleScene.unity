@@ -955,8 +955,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701058086}
-  - component: {fileID: 701058088}
   - component: {fileID: 701058087}
+  - component: {fileID: 701058088}
   m_Layer: 0
   m_Name: Pinchos
   m_TagString: Pinchos
@@ -1038,8 +1038,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &701058088
-BoxCollider2D:
+--- !u!60 &701058088
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1082,8 +1082,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.061250687, y: 0.18293}
+      - {x: -0.20265675, y: 0.006015539}
+      - {x: -0.3012886, y: -0.25394535}
+      - {x: 0.25394535, y: -0.25}
+      - {x: -0.0024995804, y: 0.1868751}
+  m_UseDelaunayMesh: 1
 --- !u!1 &887919718
 GameObject:
   m_ObjectHideFlags: 0
