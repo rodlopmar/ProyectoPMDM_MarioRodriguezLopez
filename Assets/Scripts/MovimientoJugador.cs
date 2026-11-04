@@ -17,6 +17,8 @@ public class MovimientoJugador : MonoBehaviour
     [SerializeField]
     float velocidadSalto = 15f;
     int numSaltos = 0;
+    [SerializeField]
+    float limiteCaida = -10f;
 
     [SerializeField]
     LayerMask Suelo;
@@ -30,6 +32,7 @@ public class MovimientoJugador : MonoBehaviour
 
     Vector3 posicionCheckpoint;
 
+
     void Start()
     {
         movimientoAction = InputSystem.actions.FindAction("Move");
@@ -39,15 +42,29 @@ public class MovimientoJugador : MonoBehaviour
         collider2D = GetComponent<BoxCollider2D>();
         playerAnimator = GetComponent<Animator>();
 
-        posicionCheckpoint = transform.position;
-
         estadisticas = FindFirstObjectByType<EstadisticasJuego>();
+
+        if (SceneManager.GetActiveScene().name == "Subnivel")
+        {
+            float x = PlayerPrefs.GetFloat("PosicionX");
+            float y = PlayerPrefs.GetFloat("PosicionY");
+
+            transform.position = new Vector3(x, y, transform.position.z);
+        }
+
+        posicionCheckpoint = transform.position;
     }
+
 
     void Update()
     {
         if (muerto || recibiendoDaño)
         {
+            return;
+        }
+        if (transform.position.y < limiteCaida)
+        {
+            PerderVidaPorCaida();
             return;
         }
 
@@ -150,7 +167,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         posicionCheckpoint = posicion;
     }
-    
+
 
     public void TerminarDaño()
     {
@@ -169,6 +186,29 @@ public class MovimientoJugador : MonoBehaviour
     {
         SceneManager.LoadScene("Muerte");
     }
+    void PerderVidaPorCaida()
+    {
+        if (muerto || recibiendoDaño)
+        {
+            return;
+        }
 
-    
+        estadisticas.RestarVida();
+
+        if (estadisticas.vidas <= 0)
+        {
+            muerto = true;
+            estadoAnimacion = 6;
+            rb2d.linearVelocity = Vector2.zero;
+            playerAnimator.SetInteger("estado", estadoAnimacion);
+        }
+        else
+        {
+            transform.position = posicionCheckpoint;
+            rb2d.linearVelocity = Vector2.zero;
+            numSaltos = 0;
+        }
+    }
+
+
 }

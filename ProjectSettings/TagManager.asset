@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Suelo
-  - 
+  - Mundo
   - 
   - 
   - 
@@ -42,11 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
+  - name: Mundo
     uniqueID: 1876824029
     locked: 0
-  - name: Mundo
+  - name: UI
     uniqueID: 2168237321
+    locked: 0
+  - name: Fondo
+    uniqueID: 3880901045
     locked: 0
   m_RenderingLayers:
   - Default
