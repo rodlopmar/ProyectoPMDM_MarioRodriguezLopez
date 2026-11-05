@@ -18,7 +18,7 @@ public class MovimientoJugador : MonoBehaviour
     float velocidadSalto = 15f;
     int numSaltos = 0;
     [SerializeField]
-    float limiteCaida = -10f;
+    float limiteCaida = -20f;
 
     [SerializeField]
     LayerMask Suelo;
@@ -50,6 +50,16 @@ public class MovimientoJugador : MonoBehaviour
             float y = PlayerPrefs.GetFloat("PosicionY");
 
             transform.position = new Vector3(x, y, transform.position.z);
+        }
+        else if (SceneManager.GetActiveScene().name == "Nivel1" &&
+                 PlayerPrefs.GetInt("VolverDesdeSubnivel") == 1)
+        {
+            float x = PlayerPrefs.GetFloat("VolverX");
+            float y = PlayerPrefs.GetFloat("VolverY");
+
+            transform.position = new Vector3(x, y, transform.position.z);
+
+            PlayerPrefs.SetInt("VolverDesdeSubnivel", 0);
         }
 
         posicionCheckpoint = transform.position;

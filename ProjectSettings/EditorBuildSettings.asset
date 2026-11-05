@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Subnivel.unity
     guid: cd462f276769c1c42b431b333a53ab69
+  - enabled: 1
+    path: Assets/Scenes/Nivel2.unity
+    guid: 60a3e65305d92ba44962a799487e14a6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

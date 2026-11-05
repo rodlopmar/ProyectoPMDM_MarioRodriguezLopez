@@ -7,6 +7,11 @@ public class VolverNivel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerPrefs.SetFloat("VolverX", 81.75f);
+            PlayerPrefs.SetFloat("VolverY", -2.27f);
+
+            PlayerPrefs.SetInt("VolverDesdeSubnivel", 1);
+
             SceneManager.LoadScene("Nivel1");
         }
     }
