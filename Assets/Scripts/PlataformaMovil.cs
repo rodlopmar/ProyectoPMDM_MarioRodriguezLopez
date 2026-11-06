@@ -6,17 +6,28 @@ public class ObjetoEnMovimiento : MonoBehaviour
     [SerializeField]
     float velocidad = 1f;
 
+    [SerializeField]
+    float distancia = 3f;
+
+    float posicionInicial;
+    float direccion = 1;
+
+    void Start()
+    {
+        posicionInicial = transform.position.x;
+    }
+
     void Update()
     {
-        transform.Translate(velocidad * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(direccion * velocidad * Time.deltaTime, 0, 0);
 
-        if (transform.position.x >= 49 && velocidad > 0)
+        if (transform.position.x >= posicionInicial + distancia)
         {
-            velocidad *= -1;
+            direccion = -1;
         }
-        else if (transform.position.x <= 44 && velocidad < 0)
+        else if (transform.position.x <= posicionInicial - distancia)
         {
-            velocidad *= -1;
+            direccion = 1;
         }
     }
 

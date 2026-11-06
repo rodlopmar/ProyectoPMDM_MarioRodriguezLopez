@@ -8,6 +8,7 @@ public class MenuPrincipal : MonoBehaviour
     {
         PlayerPrefs.SetInt("Vidas", 3);
         PlayerPrefs.SetInt("Frutas", 0);
+        PlayerPrefs.Save();
 
         SceneManager.LoadScene("Nivel1");
     }

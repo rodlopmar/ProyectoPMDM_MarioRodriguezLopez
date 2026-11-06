@@ -92,7 +92,7 @@ public class MovimientoJugador : MonoBehaviour
                 estadoAnimacion = 2;
             }
         }
-        else if (rb2d.linearVelocityY < -0.1f)
+        else if (rb2d.linearVelocityY < -0f)
         {
             estadoAnimacion = 5;
         }
@@ -152,8 +152,10 @@ public class MovimientoJugador : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("Pinchos") && !recibiendoDaño && !muerto)
         {
+
             estadisticas.RestarVida();
 
             rb2d.linearVelocity = Vector2.zero;
@@ -166,9 +168,14 @@ public class MovimientoJugador : MonoBehaviour
             }
             else
             {
+
+
                 recibiendoDaño = true;
                 estadoAnimacion = 4;
+
+
                 playerAnimator.SetInteger("estado", estadoAnimacion);
+
             }
         }
     }
@@ -187,9 +194,11 @@ public class MovimientoJugador : MonoBehaviour
         }
 
         transform.position = posicionCheckpoint;
+        ReiniciarPlataformas();
         rb2d.linearVelocity = Vector2.zero;
         numSaltos = 0;
         recibiendoDaño = false;
+
     }
 
     public void CargarEscenaMuerte()
@@ -215,8 +224,18 @@ public class MovimientoJugador : MonoBehaviour
         else
         {
             transform.position = posicionCheckpoint;
+            ReiniciarPlataformas();
             rb2d.linearVelocity = Vector2.zero;
             numSaltos = 0;
+        }
+    }
+    void ReiniciarPlataformas()
+    {
+        PlataformaCae[] plataformas = FindObjectsByType<PlataformaCae>(FindObjectsSortMode.None);
+
+        foreach (PlataformaCae plataforma in plataformas)
+        {
+            plataforma.ReiniciarPlataforma();
         }
     }
 

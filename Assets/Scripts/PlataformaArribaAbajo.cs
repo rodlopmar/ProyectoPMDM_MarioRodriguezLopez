@@ -19,7 +19,7 @@ public class PlataformaVertical : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0, direccion * velocidad * Time.deltaTime, 0);
+        transform.position += new Vector3(0, direccion * velocidad * Time.deltaTime, 0);
 
         if (transform.position.y >= posicionInicial + distancia)
         {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9061828939763151385}
   - component: {fileID: 1344751574067735441}
   - component: {fileID: 7381477588847894319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlataformaMovil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2148963405207899866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.64866, y: 0.61083, z: 0}
+  m_LocalPosition: {x: 147.33083, y: 82.273766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2148963405207899866}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -180,3 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjetoEnMovimiento
   velocidad: 2
+  distancia: 3
