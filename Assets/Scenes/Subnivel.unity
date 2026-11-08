@@ -187,12 +187,24 @@ PrefabInstance:
       value: -2126729975
       objectReference: {fileID: 0}
     - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13786125
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14668892
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14668892
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 80
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 4315075145743569890, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_Pivot.x
@@ -274,17 +286,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13460237
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14322136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14322136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 136
+      objectReference: {fileID: 0}
     - target: {fileID: 5664033293059240310, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_Name
       value: CanvaMovil
       objectReference: {fileID: 0}
     - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14063373
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14963894
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14963894
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 391
       objectReference: {fileID: 0}
     - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 84
+      value: 139
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

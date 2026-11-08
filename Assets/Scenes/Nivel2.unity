@@ -1210,8 +1210,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1876824029
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -10404,6 +10404,26 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.12592427
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13398759
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13398759
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 514553392226677169, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 117
+      objectReference: {fileID: 0}
     - target: {fileID: 2730042699552931459, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_UiScaleMode
       value: 0
@@ -10488,9 +10508,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14382665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15303631
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15303631
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218760624106268392, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 5664033293059240310, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
       propertyPath: m_Name
       value: CanvaMovil
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13027243
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13861415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13861415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 371
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773920477005679863, guid: 0ddb14379b5c9b74283fb27e9a82fbbe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

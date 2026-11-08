@@ -1,6 +1,6 @@
 # The Dudewood
 
-**Autor:** [Nombre y apellidos]
+**Autor:** Mario Rodriguez Lopez
 
 ## Descripción del juego
 
@@ -12,16 +12,20 @@ Durante la aventura podremos recoger frutas, realizar saltos dobles y utilizar p
 
 ### Pantalla de inicio
 
-![Pantalla de inicio](Capturas/inicio.png)
+![Pantalla de inicio](Capturas/Inicio.JPG)
 
 ### Pantalla de fin
 
-![Pantalla de fin](Capturas/fin.png)
+![Pantalla de fin](Capturas/Fin.JPG)
 
 ### Nivel 1
 
-![Nivel 1](Capturas/nivel1.png)
+![Nivel 1](Capturas/Nivel1.JPG)
+
+### Subnivel
+
+![Nivel 1](Capturas/Subnivel.JPG)
 
 ### Nivel 2
 
-![Nivel 2](Capturas/nivel2.png)
+![Nivel 2](Capturas/Nivel2.JPG)
