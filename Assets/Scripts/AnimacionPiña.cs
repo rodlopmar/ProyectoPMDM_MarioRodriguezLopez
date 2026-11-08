@@ -8,11 +8,15 @@ public class AnimacionPiña : MonoBehaviour
     int estado = 0;
     Animator animacion;
     EstadisticasJuego estadisticas;
+    AudioSource sonido;
+    [SerializeField]
+    AudioClip sonidoFruta;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animacion = GetComponent<Animator>();
         estadisticas = FindFirstObjectByType<EstadisticasJuego>();
+        sonido = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class AnimacionPiña : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             estado = 1;
+            sonido.PlayOneShot(sonidoFruta);
             estadisticas.SumarFruta();
         }
     }

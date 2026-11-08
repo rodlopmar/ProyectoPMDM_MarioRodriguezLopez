@@ -31,6 +31,12 @@ public class MovimientoJugador : MonoBehaviour
     bool muerto = false;
 
     Vector3 posicionCheckpoint;
+    AudioSource sonido;
+    [SerializeField] AudioClip sonidoSalto;
+    [SerializeField]
+    AudioClip sonidoDaño;
+    [SerializeField]
+    AudioClip sonidoMuerte;
 
 
     void Start()
@@ -43,6 +49,7 @@ public class MovimientoJugador : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
 
         estadisticas = FindFirstObjectByType<EstadisticasJuego>();
+        sonido = GetComponent<AudioSource>();
 
         if (SceneManager.GetActiveScene().name == "Subnivel")
         {
@@ -67,41 +74,29 @@ public class MovimientoJugador : MonoBehaviour
 
 
     void Update()
+{
+    if (muerto || recibiendoDaño)
     {
-        if (muerto || recibiendoDaño)
-        {
-            return;
-        }
-        if (transform.position.y < limiteCaida)
-        {
-            PerderVidaPorCaida();
-            return;
-        }
+        return;
+    }
 
-        Moverse();
-        Saltar();
+    if (transform.position.y < limiteCaida)
+    {
+        PerderVidaPorCaida();
+        return;
+    }
 
-        if (rb2d.linearVelocityY > 0.1f)
-        {
-            if (numSaltos == 2)
-            {
-                estadoAnimacion = 3;
-            }
-            else
-            {
-                estadoAnimacion = 2;
-            }
-        }
-        else if (rb2d.linearVelocityY < -0f)
-        {
-            estadoAnimacion = 5;
-        }
-        else if (rb2d.linearVelocityX > 0)
+    Moverse();
+    Saltar();
+
+    if (EstaTocandoSuelo())
+    {
+        if (rb2d.linearVelocityX > 0.1f)
         {
             estadoAnimacion = 1;
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (rb2d.linearVelocityX < 0)
+        else if (rb2d.linearVelocityX < -0.1f)
         {
             estadoAnimacion = 1;
             transform.localScale = new Vector3(-1, 1, 1);
@@ -110,9 +105,21 @@ public class MovimientoJugador : MonoBehaviour
         {
             estadoAnimacion = 0;
         }
-
-        playerAnimator.SetInteger("estado", estadoAnimacion);
     }
+    else if (rb2d.linearVelocityY > 0.1f)
+    {
+        if (numSaltos == 2)
+            estadoAnimacion = 3;
+        else
+            estadoAnimacion = 2;
+    }
+    else
+    {
+        estadoAnimacion = 5;
+    }
+
+    playerAnimator.SetInteger("estado", estadoAnimacion);
+}
 
     void Moverse()
     {
@@ -121,22 +128,26 @@ public class MovimientoJugador : MonoBehaviour
     }
 
     void Saltar()
+{
+    if (saltarAction.WasPressedThisFrame())
     {
-        if (saltarAction.WasPressedThisFrame())
+        if (EstaTocandoSuelo())
         {
-            if (EstaTocandoSuelo())
-            {
-                numSaltos = 0;
-                rb2d.linearVelocityY = velocidadSalto;
-                numSaltos++;
-            }
-            else if (numSaltos < 2)
-            {
-                rb2d.linearVelocityY = velocidadSalto;
-                numSaltos++;
-            }
+            sonido.PlayOneShot(sonidoSalto);
+
+            numSaltos = 0;
+            rb2d.linearVelocityY = velocidadSalto;
+            numSaltos++;
+        }
+        else if (numSaltos < 2)
+        {
+            sonido.PlayOneShot(sonidoSalto);
+
+            rb2d.linearVelocityY = velocidadSalto;
+            numSaltos++;
         }
     }
+}
 
     bool EstaTocandoSuelo()
     {
@@ -156,6 +167,8 @@ public class MovimientoJugador : MonoBehaviour
         if (collision.gameObject.CompareTag("Pinchos") && !recibiendoDaño && !muerto)
         {
 
+            sonido.PlayOneShot(sonidoDaño);
+
             estadisticas.RestarVida();
 
             rb2d.linearVelocity = Vector2.zero;
@@ -163,6 +176,7 @@ public class MovimientoJugador : MonoBehaviour
             if (estadisticas.vidas <= 0)
             {
                 muerto = true;
+                sonido.PlayOneShot(sonidoMuerte);
                 estadoAnimacion = 6;
                 playerAnimator.SetInteger("estado", estadoAnimacion);
             }
@@ -217,12 +231,14 @@ public class MovimientoJugador : MonoBehaviour
         if (estadisticas.vidas <= 0)
         {
             muerto = true;
+            sonido.PlayOneShot(sonidoMuerte);
             estadoAnimacion = 6;
             rb2d.linearVelocity = Vector2.zero;
             playerAnimator.SetInteger("estado", estadoAnimacion);
         }
         else
         {
+            sonido.PlayOneShot(sonidoDaño);
             transform.position = posicionCheckpoint;
             ReiniciarPlataformas();
             rb2d.linearVelocity = Vector2.zero;

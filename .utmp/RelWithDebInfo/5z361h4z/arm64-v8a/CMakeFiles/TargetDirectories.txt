@@ -1,0 +1,8 @@
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/rodlopmar/Curso 2026-27/PMDM/ProyectoUnity/ProyectoPMDM_MarioRodriguezLopez/.utmp/RelWithDebInfo/5z361h4z/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

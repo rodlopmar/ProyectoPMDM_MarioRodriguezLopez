@@ -324,6 +324,7 @@ MonoBehaviour:
   Suelo:
     serializedVersion: 2
     m_Bits: 64
+  sonidoSalto: {fileID: 8300000, guid: 009116a1c8d0ce84f9a845ad9f65970e, type: 3}
 --- !u!95 &6432901161386205862
 Animator:
   serializedVersion: 7
